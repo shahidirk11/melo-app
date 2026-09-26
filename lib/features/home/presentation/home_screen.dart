@@ -7,6 +7,7 @@ import '../../../app/theme/app_colors.dart';
 import '../../../app/theme/app_spacing.dart';
 import '../../../app/theme/app_typography.dart';
 import '../../../data/models/mood_entry_model.dart';
+import '../../../data/models/session_model.dart';
 import '../../../shared/animations/melo_slide_transition.dart';
 import '../../../shared/widgets/melo_badge.dart';
 import '../../../shared/widgets/melo_button.dart';
