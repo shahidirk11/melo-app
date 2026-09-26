@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../app/config/app_config.dart';
+import '../../../../app/providers.dart';
 import '../../../../app/theme/app_colors.dart';
 import '../../../../app/theme/app_spacing.dart';
 import '../../../../app/theme/app_typography.dart';
@@ -87,7 +88,6 @@ class AboutMeloModal extends ConsumerWidget {
 
           // Philosophy / About Melo
           MeloCard(
-            style: MeloCardStyle.subtle,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

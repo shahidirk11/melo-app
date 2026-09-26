@@ -30,18 +30,18 @@ class SessionRecordDetailsModal extends StatelessWidget {
     return '$month ${dt.day}, ${dt.year} at $hour:$minute $ampm';
   }
 
-  void _confirmDelete(BuildContext context) {
-    MeloDialog.show(
+  Future<void> _confirmDelete(BuildContext context) async {
+    final confirmed = await MeloDialog.show(
       context: context,
       title: 'Remove practice record?',
       content: 'This practice session will be removed from your history.',
-      confirmLabel: 'Remove',
+      primaryActionLabel: 'Remove',
       isDestructive: true,
-      onConfirm: () {
-        Navigator.of(context).pop(); // close details modal
-        onDelete();
-      },
     );
+    if (confirmed == true && context.mounted) {
+      Navigator.of(context).pop(); // close details modal
+      onDelete();
+    }
   }
 
   @override

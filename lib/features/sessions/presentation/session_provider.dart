@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../app/providers.dart';
 import '../../../core/services/audio/audio_service.dart';
 import '../../../core/services/audio/audio_types.dart';
+import '../../../core/services/audio/in_memory_audio_service.dart';
 import '../../../data/models/breathing_pattern_model.dart';
 import '../../../data/models/mood_entry_model.dart';
 import '../../../data/models/session_model.dart';

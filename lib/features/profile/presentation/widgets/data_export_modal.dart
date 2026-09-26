@@ -50,11 +50,10 @@ class DataExportModal extends ConsumerWidget {
         'id': r.id,
         'sessionId': r.sessionId,
         'sessionTitle': r.sessionTitle,
-        'durationSeconds': r.durationSeconds,
+        'durationCompletedSeconds': r.durationCompletedSeconds,
         'completedAt': r.completedAt.toIso8601String(),
-        'preMood': r.preMood,
-        'postMood': r.postMood,
-        'rating': r.rating,
+        'moodBefore': r.moodBefore?.name,
+        'moodAfter': r.moodAfter?.name,
       }).toList(),
     };
   }

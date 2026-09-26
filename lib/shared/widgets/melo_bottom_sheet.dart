@@ -17,8 +17,8 @@ class MeloBottomSheet extends StatelessWidget {
   final String? subtitle;
   final Widget? trailing;
 
-  static Future<T?> show<T>({
-    required BuildContext context,
+  static Future<T?> show<T>(
+    BuildContext context, {
     required Widget child,
     String? title,
     String? subtitle,
