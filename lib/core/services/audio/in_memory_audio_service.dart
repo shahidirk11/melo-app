@@ -74,7 +74,7 @@ class InMemoryAudioService implements AudioService {
   Future<void> play() async {
     if (_isDisposed) return;
 
-    final nStatus = _snapshot.hasNarration
+    final nStatus = (_snapshot.hasNarration || _snapshot.isFallbackMode)
         ? AudioPlaybackStatus.playing
         : _snapshot.narrationStatus;
     final aStatus = _snapshot.hasAmbient

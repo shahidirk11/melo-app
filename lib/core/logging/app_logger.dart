@@ -8,15 +8,22 @@ enum LogLevel {
 }
 
 abstract class AppLogger {
+  static AppLogger _instance = const StandardLogger();
+  static set instance(AppLogger logger) => _instance = logger;
+
+  static void d(String message, {Object? error, StackTrace? stackTrace}) =>
+      _instance.debug(message, error, stackTrace);
+  static void i(String message, {Object? error, StackTrace? stackTrace}) =>
+      _instance.info(message, error, stackTrace);
+  static void w(String message, {Object? error, StackTrace? stackTrace}) =>
+      _instance.warning(message, error, stackTrace);
+  static void e(String message, {Object? error, StackTrace? stackTrace}) =>
+      _instance.error(message, error, stackTrace);
+
   void debug(String message, [Object? error, StackTrace? stackTrace]);
   void info(String message, [Object? error, StackTrace? stackTrace]);
   void warning(String message, [Object? error, StackTrace? stackTrace]);
   void error(String message, [Object? error, StackTrace? stackTrace]);
-
-  void d(String message, [Object? error, StackTrace? stackTrace]);
-  void i(String message, [Object? error, StackTrace? stackTrace]);
-  void w(String message, [Object? error, StackTrace? stackTrace]);
-  void e(String message, [Object? error, StackTrace? stackTrace]);
 }
 
 class StandardLogger implements AppLogger {
@@ -43,22 +50,6 @@ class StandardLogger implements AppLogger {
   void error(String message, [Object? error, StackTrace? stackTrace]) {
     _log(LogLevel.error, message, error, stackTrace);
   }
-
-  @override
-  void d(String message, [Object? error, StackTrace? stackTrace]) =>
-      debug(message, error, stackTrace);
-
-  @override
-  void i(String message, [Object? error, StackTrace? stackTrace]) =>
-      info(message, error, stackTrace);
-
-  @override
-  void w(String message, [Object? error, StackTrace? stackTrace]) =>
-      warning(message, error, stackTrace);
-
-  @override
-  void e(String message, [Object? error, StackTrace? stackTrace]) =>
-      error(message, error, stackTrace);
 
   void _log(
     LogLevel level,
