@@ -45,7 +45,7 @@ abstract class AppTheme {
         ),
         titleTextStyle: AppTypography.heading2,
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.cardSurface,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -163,7 +163,7 @@ abstract class AppTheme {
           color: AppColors.darkTextPrimary,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: AppColors.darkSurface,
         elevation: 0,
         shape: RoundedRectangleBorder(

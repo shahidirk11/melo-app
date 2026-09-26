@@ -8,6 +8,7 @@ import '../core/services/connectivity_service.dart';
 import '../core/services/crashlytics_service.dart';
 import '../core/services/notification_service.dart';
 import '../data/database/database.dart';
+import '../data/models/app_settings_model.dart';
 import '../data/models/user_preferences_model.dart';
 import '../data/repositories/app_settings_repository.dart';
 import '../data/repositories/breathing_pattern_repository.dart';
