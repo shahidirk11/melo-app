@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="melo_dark_bg">#131915</color>
+    <color name="melo_light_bg">#F7F6F1</color>
+    <color name="melo_primary">#2D5A43</color>
+</resources>

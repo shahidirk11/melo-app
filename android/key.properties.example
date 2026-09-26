@@ -1,0 +1,7 @@
+# Example release keystore configuration for Melo Android build
+# Copy this file to 'android/key.properties' and fill in your production values.
+# NEVER commit key.properties or .jks keystore files to version control.
+keyAlias=melo_release_key
+keyPassword=YOUR_KEY_PASSWORD_HERE
+storeFile=../keystores/melo_release.jks
+storePassword=YOUR_STORE_PASSWORD_HERE

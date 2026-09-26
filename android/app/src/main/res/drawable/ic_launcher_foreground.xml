@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Gentle Leaf/Spa Symbol for Melo brand -->
+    <path
+        android:fillColor="#EBEFEA"
+        android:pathData="M54,26 C40,40 36,56 42,70 C48,78 58,82 68,76 C78,70 82,56 80,42 C78,32 66,28 54,26 Z"/>
+</vector>
