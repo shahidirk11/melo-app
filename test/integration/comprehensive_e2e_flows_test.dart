@@ -353,7 +353,7 @@ void main() {
     // -------------------------------------------------------------------------
     test('Flow 16 & 17: Reminder schedule creation and notification permission toggle',
         () async {
-      final container = ProviderScope(overrides: createOverrides()).createContainer();
+      final container = ProviderContainer(overrides: createOverrides());
       final notifier = container.read(remindersProvider.notifier);
 
       await notifier.load();
@@ -380,7 +380,7 @@ void main() {
     // -------------------------------------------------------------------------
     test('Flow 19-21: Settings persistence: dark mode, reduced motion, and haptics',
         () async {
-      final container = ProviderScope(overrides: createOverrides()).createContainer();
+      final container = ProviderContainer(overrides: createOverrides());
       final userNotifier = container.read(userPreferencesProvider.notifier);
 
       // 1. Dark Mode
@@ -408,8 +408,8 @@ void main() {
     // -------------------------------------------------------------------------
     test('Flow 22: Offline mode operations function with zero remote networking required',
         () async {
-      connectivityService.simulateDisconnect();
-      expect(await connectivityService.checkConnection(), isFalse);
+      connectivityService.setNetworkStatus(NetworkStatus.offline);
+      expect(connectivityService.isOffline, isTrue);
 
       // Offline content browsing
       final sessions = await sessionRepo.getAllSessions();
@@ -483,7 +483,7 @@ void main() {
     // -------------------------------------------------------------------------
     testWidgets('Flow 27: Error view is rendered gracefully on session load failure',
         (tester) async {
-      final container = ProviderScope(overrides: createOverrides()).createContainer();
+      final container = ProviderContainer(overrides: createOverrides());
       final engineNotifier = container.read(sessionEngineProvider.notifier);
 
       // Initialize with non-existent session ID
